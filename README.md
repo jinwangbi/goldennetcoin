@@ -6,6 +6,7 @@ Website: http://www.jinwangbi.com
 General Specs:
 
 Proof: POW+POS
+
 POW Algorithm:HEFTY1+PARA4(SCRYPT、KECCAK512、GROESTL512、BLAKE512）
 
 Block Time: 40 seconds
