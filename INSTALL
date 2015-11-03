@@ -1,0 +1,9 @@
+Building Goldennetcoin
+
+See doc/readme-qt.rst for instructions on building Goldennetcoin QT,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of Goldennetcoin.
+
+See doc/build-*.txt for instructions on building Goldennetcoind,
+the intended-for-services, no-graphical-interface, reference
+implementation of Goldennetcoin.
