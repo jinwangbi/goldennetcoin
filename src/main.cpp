@@ -1054,13 +1054,19 @@ int64 GetProofOfStakeReward(int64 nCoinAge,int64 nCoinAgeL1,int64 nCoinAgeL2, un
 {
     int64 nSubsidy = 0;
     if(pindexBest->nMoneySupply < MAX_MONEY)
-        nSubsidy = (nCoinAgeL1 * MINT_PROOF_OF_STAKE_L1) + (nCoinAgeL2 * MINT_PROOF_OF_STAKE_L2) / 365;
+    {
+        if(nHeight < 35000)
+            nSubsidy = (nCoinAgeL1 * MINT_PROOF_OF_STAKE_L1) + (nCoinAgeL2 * MINT_PROOF_OF_STAKE_L2) / 365;
+        else
+            nSubsidy = ((nCoinAgeL1 * MINT_PROOF_OF_STAKE_L1) + (nCoinAgeL2 * MINT_PROOF_OF_STAKE_L2)) / 365;
+    }
 
     if (fDebug && GetBoolArg("-printcreation"))
         printf("GetProofOfStakeReward(): create=%s nCoinAge=%"PRI64d" nBits=%d nHeight=%d\n", FormatMoney(nSubsidy).c_str(), nCoinAge, nBits,nHeight);
 
     return nSubsidy;
 }
+
 
 
 
